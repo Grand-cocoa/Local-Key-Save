@@ -66,9 +66,11 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
 		ItemController controller = new ItemController(this);
 		if (state){
 			controller.saveObject(list);
+			creatListView();
 		}else {
 			if (controller.check(list).isReturnValue()){
 				controller.submit(list);
+				creatListView();
 			}else {
 				new AlertDialog.Builder(this)
 						.setTitle("导入")
