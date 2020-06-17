@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:tools="http://schemas.android.com/tools">
+	<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/undefined"
+			android:visibility="gone"
+			android:id="@+id/item_edit_index"
+			tools:ignore="MissingConstraints"/>
+	<TableLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			tools:ignore="MissingConstraints">
+		<!-- 应用名称条目 -->
+		<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				tools:ignore="MissingConstraints">
+
+			<EditText
+					android:layout_width="256dp"
+					android:layout_height="@android:dimen/app_icon_size"
+					tools:ignore="MissingConstraints"
+					android:importantForAutofill="no"
+					android:inputType="text"
+					android:id="@+id/item_edit_name"
+					android:hint="@string/item_name"
+					android:layout_centerHorizontal="true"
+					/>
+		</RelativeLayout>
+		<!-- 用户名/邮箱条目 -->
+		<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				tools:ignore="MissingConstraints">
+
+			<EditText
+					android:layout_width="256dp"
+					android:layout_height="@android:dimen/app_icon_size"
+					tools:ignore="MissingConstraints"
+					android:importantForAutofill="no"
+					android:inputType="text"
+					android:id="@+id/item_edit_user_name"
+					android:hint="@string/item_user_name"
+					android:layout_centerHorizontal="true"
+					/>
+		</RelativeLayout>
+		<!-- 密码条目 -->
+		<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				tools:ignore="MissingConstraints">
+
+			<EditText
+					android:layout_width="256dp"
+					android:layout_height="@android:dimen/app_icon_size"
+					tools:ignore="MissingConstraints"
+					android:importantForAutofill="no"
+					android:inputType="text"
+					android:id="@+id/item_edit_user_pwd"
+					android:hint="@string/item_user_pwd"
+					android:layout_centerHorizontal="true"
+					/>
+		</RelativeLayout>
+	</TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

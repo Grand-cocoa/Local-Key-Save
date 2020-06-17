@@ -1,0 +1,33 @@
+<resources>
+	<string name="app_name">Local Key Save</string>
+	<string name="main_value">这款软件可以本地储存您的密码。所有信息不会经过网络且转移信息只需要一段文本。</string>
+	<string name="button_submit">保存</string>
+	<string name="button_find">查看所有密码</string>
+	<string name="item_name">名称</string>
+	<string name="item_user_name">用户名/邮箱/手机号</string>
+	<string name="item_user_pwd">密码</string>
+	<string name="list_item_user_name">用户名：</string>
+	<string name="list_item_user_pwd">密码：</string>
+	<string name="main_biometric_switch">系统验证</string>
+	<string name="list_item_onclick">点击可复制</string>
+
+	<string name="list_name">所有密码</string>
+
+	<string name="title_activity_login">Sign in</string>
+	<string name="prompt_password">密码</string>
+	<string name="action_sign_in">登录/注册</string>
+	<string name="action_sign_in_short">登录</string>
+	<string name="action_sign_in_short_biometric">使用系统认证</string>
+	<string name="welcome">"Welcome !"</string>
+	<string name="invalid_password">密码必须大于5个字符</string>
+	<string name="login_failed">"Login failed"</string>
+
+	<string name="undefined">undefined</string>
+
+	<string name="export">导出</string>
+	<string name="export_key">口令</string>
+	<string name="export_key_massage">此口令将作为导入数据时的重要依据，选填</string>
+	<string name="the_import">导入</string>
+	<string name="import_main">要导入的内容</string>
+	<string name="import_key_massage">输入导出时设置的口令，选填</string>
+</resources>
