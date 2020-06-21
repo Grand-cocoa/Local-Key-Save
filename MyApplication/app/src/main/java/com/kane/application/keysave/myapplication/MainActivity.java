@@ -21,23 +21,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 	EditText userName;
 	EditText userPwd;
 	BiometricUtil biometricUtil;
+	Intent intent;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		submit = findViewById(R.id.button_submit);
-		find = findViewById(R.id.button_find);
-		biometricSwitch = findViewById(R.id.biometric_switch);
-		name = findViewById(R.id.item_name);
-		userName = findViewById(R.id.item_user_name);
-		userPwd = findViewById(R.id.item_user_pwd);
-		submit.setOnClickListener(this);
-		find.setOnClickListener(this);
-		biometricSwitch.setOnClickListener(this);
-		biometricUtil = new BiometricUtil(this);
-		if(biometricUtil.test()){
-			biometricSwitch.setVisibility(View.VISIBLE);
+		intent = getIntent();
+		String login = intent.getStringExtra("login");
+		if (!"true".equals(login)){
+			intent = new Intent(MainActivity.this, LoginActivity.class);
+			startActivity(intent);
+			MainActivity.this.finish();
+		}else {
+			setContentView(R.layout.activity_main);
+			submit = findViewById(R.id.button_submit);
+			find = findViewById(R.id.button_find);
+			biometricSwitch = findViewById(R.id.biometric_switch);
+			name = findViewById(R.id.item_name);
+			userName = findViewById(R.id.item_user_name);
+			userPwd = findViewById(R.id.item_user_pwd);
+			submit.setOnClickListener(this);
+			find.setOnClickListener(this);
+			biometricSwitch.setOnClickListener(this);
+			biometricUtil = new BiometricUtil(this);
+			if (biometricUtil.test()) {
+				biometricSwitch.setVisibility(View.VISIBLE);
+			}
 		}
 	}
 

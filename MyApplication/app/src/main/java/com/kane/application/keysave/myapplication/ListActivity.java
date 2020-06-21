@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,17 +22,26 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	Button export;
 	Button the_import;
+	Intent intent;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_list);
-		ListView listView = creatListView();
-		listView.setOnItemClickListener(this);
-		export = findViewById(R.id.export);
-		the_import = findViewById(R.id.the_import);
-		export.setOnClickListener(this);
-		the_import.setOnClickListener(this);
+		intent = getIntent();
+		String login = intent.getStringExtra("login");
+		if (!"true".equals(login)){
+			intent = new Intent(ListActivity.this, LoginActivity.class);
+			startActivity(intent);
+			ListActivity.this.finish();
+		}else {
+			setContentView(R.layout.activity_list);
+			ListView listView = creatListView();
+			listView.setOnItemClickListener(this);
+			export = findViewById(R.id.export);
+			the_import = findViewById(R.id.the_import);
+			export.setOnClickListener(this);
+			the_import.setOnClickListener(this);
+		}
 	}
 
 	@Override
